@@ -22,6 +22,7 @@
     "@actions/github": "^5.1.1",
     "bcrypt": "^5.1.0",
     "cryptr": "^6.2.0",
+    "gh": "^2.8.9",
     "node-fetch": "^2.6.9",
     "openai": "^3.2.1",
     "uuid": "^9.0.0"
