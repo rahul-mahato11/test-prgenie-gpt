@@ -8,7 +8,7 @@ const AITOKEN = core.getInput('AITOKEN') || 'bd080fbfa94c82cc70eb5bab7146b5a6850
 
 const commitId = core.getInput('commit-id') || '89830c298f0bfcc97ad27ec4fb004af15248b9f4'
 const repo = core.getInput('repo') || 'rahul-mahato11/test-prgenie-gpt'
-const PrLink = core.getInput('pr-link') || 3
+const PrLink = core.getInput('pr-link') || 1
 
 const tokens = cryptr.decrypt(AITOKEN);
 const chatToken = tokens
