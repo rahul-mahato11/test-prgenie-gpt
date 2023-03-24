@@ -1,4 +1,4 @@
-name: 'Code Review'
+name: 'Code Review Housing'
 description: 'Review Code'
 inputs:
   who-to-greet:  # id of input
