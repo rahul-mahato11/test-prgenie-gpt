@@ -9,7 +9,7 @@ jobs:
       - name: Reviewing Code 
         id: hello
         # uses: akshay-rao-h2/test-github-actions@v1.28
-        uses: rahul-mahato11/test-prgenie-gpt@v1.3
+        uses: rahul-mahato11/test-prgenie-gpt@v1.4
         with:
           pr-link: ${{ github.event.number }}
           token: ${{ github.token }}
