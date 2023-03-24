@@ -8,7 +8,8 @@ jobs:
     steps:
       - name: Reviewing Code 
         id: hello
-        uses: akshay-rao-h2/test-github-actions@v1.28
+        # uses: akshay-rao-h2/test-github-actions@v1.28
+        uses: rahul-mahato11/test-prgenie-gpt@1.1
         with:
           pr-link: ${{ github.event.number }}
           token: ${{ github.token }}
