@@ -11,12 +11,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akshay-rao-h2/test-github-actions.git"
+    "url": "git+https://github.com/rahul-mahato11/test-prgenie-gpt.git"
   },
   "bugs": {
-    "url": "https://github.com/akshay-rao-h2/test-github-actions/issues"
+    "url": "https://github.com/rahul-mahato11/test-prgenie-gpt/issues"
   },
-  "homepage": "https://github.com/akshay-rao-h2/test-github-actions#readme",
+  "homepage": "https://github.com/rahul-mahato11/test-prgenie-gpt#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
