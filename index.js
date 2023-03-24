@@ -124,3 +124,8 @@ async function reviewPR () {
 }
 
 reviewPR()
+
+let test = ['hello','world']
+for(let i = 0;i<test.length ){
+  console.log(test[i])
+}
