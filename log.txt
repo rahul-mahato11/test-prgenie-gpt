@@ -1,0 +1,752 @@
+{
+  chatToken: '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',
+  AITOKEN: '',
+  AiToken: '',
+  aitoken: '',
+  aiToken: ''
+}
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml index 59acb64..c2bfc94 100644 --- a/.github/workflows/main.yml +++ b/.github/workflows/main.yml @@ -7,7 +7,7 @@ jobs:      steps:        - name: Hello world action step          id: hello -        uses: akshay-rao-h2/test-github-actions@v1.17 +        uses: akshay-rao-h2/test-github-actions@v1.21          with: 
+{
+  e: Error: Request failed with status code 429
+      at createError (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/createError.js:16:15)
+      at settle (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/settle.js:17:12)
+      at IncomingMessage.handleStreamEnd (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/adapters/http.js:322:11)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+    config: {
+      transitional: [Object],
+      adapter: [Function: httpAdapter],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      validateStatus: [Function: validateStatus],
+      headers: [Object],
+      method: 'post',
+      data: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"\\n  Act as a code reviewer of a Pull Request, providing feedback on the code changes below. The code is in form of chunks please keep the context of previous chunk in mind.\\n  You are provided with the Pull Request changes in a patch format.\\n  Each patch entry has the commit message in the Subject line followed by the code changes (diffs) in a unidiff format.\\n  \\n\\n\\n  Patch of the Pull Request to review:\\n  \\n\\n  diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml index 59acb64..c2bfc94 100644 --- a/.github/workflows/main.yml +++ b/.github/workflows/main.yml @@ -7,7 +7,7 @@ jobs:      steps:        - name: Hello world action step          id: hello -        uses: akshay-rao-h2/test-github-actions@v1.17 +        uses: akshay-rao-h2/test-github-actions@v1.21          with: \\n  \\n\\n\\n  \\n  As a code reviewer, your task is:\\n  - Review the code changes (diffs) in the patch and provide feedback.\\n  - If there are any bugs, highlight them.\\n  - Do not highlight minor issues and nitpicks.\\n  - Limit comments to 1 point maximum and please answer in atmax 25 words.\\n  - do not add unnecessary new lines.\\n  - please give only issues that you see.\\n  - return in markup language for github"}]}',
+      url: 'https://api.openai.com/v1/chat/completions'
+    },
+    request: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: null,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      _header: 'POST /v1/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: OpenAI/NodeJS/3.2.1\r\n' +
+        'Authorization: Bearer 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\r\n' +
+        'Content-Length: 1283\r\n' +
+        'Host: api.openai.com\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/v1/chat/completions',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.openai.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    response: {
+      status: 429,
+      statusText: 'Too Many Requests',
+      headers: [Object],
+      config: [Object],
+      request: [ClientRequest],
+      data: [Object]
+    },
+    isAxiosError: true,
+    toJSON: [Function: toJSON]
+  }
+}
+           who-to-greet: 'Mona the Octocat12'            pr-link: ${{ github.event.number }} diff --git a/index.js b/index.js index eb78898..93d58f3 100644 --- a/index.js +++ b/index.js @@ -6,9 +6,14 @@ const AITOKEN = core.getInput('AITOKEN')  const AiToken = core.getInput('AiToken')  const aitoken = core.getInput('aitoken')  const aiToken = core.getInput('aiToken') 
+{
+  e: Error: Request failed with status code 429
+      at createError (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/createError.js:16:15)
+      at settle (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/settle.js:17:12)
+      at IncomingMessage.handleStreamEnd (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/adapters/http.js:322:11)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+    config: {
+      transitional: [Object],
+      adapter: [Function: httpAdapter],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      validateStatus: [Function: validateStatus],
+      headers: [Object],
+      method: 'post',
+      data: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"\\n  Act as a code reviewer of a Pull Request, providing feedback on the code changes below. The code is in form of chunks please keep the context of previous chunk in mind.\\n  You are provided with the Pull Request changes in a patch format.\\n  Each patch entry has the commit message in the Subject line followed by the code changes (diffs) in a unidiff format.\\n  \\n\\n\\n  Patch of the Pull Request to review:\\n  \\n\\n             who-to-greet: \'Mona the Octocat12\'            pr-link: ${{ github.event.number }} diff --git a/index.js b/index.js index eb78898..93d58f3 100644 --- a/index.js +++ b/index.js @@ -6,9 +6,14 @@ const AITOKEN = core.getInput(\'AITOKEN\')  const AiToken = core.getInput(\'AiToken\')  const aitoken = core.getInput(\'aitoken\')  const aiToken = core.getInput(\'aiToken\') \\n  \\n\\n\\n  \\n  As a code reviewer, your task is:\\n  - Review the code changes (diffs) in the patch and provide feedback.\\n  - If there are any bugs, highlight them.\\n  - Do not highlight minor issues and nitpicks.\\n  - Limit comments to 1 point maximum and please answer in atmax 25 words.\\n  - do not add unnecessary new lines.\\n  - please give only issues that you see.\\n  - return in markup language for github"}]}',
+      url: 'https://api.openai.com/v1/chat/completions'
+    },
+    request: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: null,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      _header: 'POST /v1/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: OpenAI/NodeJS/3.2.1\r\n' +
+        'Authorization: Bearer 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\r\n' +
+        'Content-Length: 1271\r\n' +
+        'Host: api.openai.com\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/v1/chat/completions',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.openai.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    response: {
+      status: 429,
+      statusText: 'Too Many Requests',
+      headers: [Object],
+      config: [Object],
+      request: [ClientRequest],
+      data: [Object]
+    },
+    isAxiosError: true,
+    toJSON: [Function: toJSON]
+  }
+}
++let tokens = ["sk-",["gDRf"], ["T7tVZx","Z6n6mX"],["7d3sT3","BlbkFJnF2KXnHkm"],"wjFmh9DEdQ9"].flat(Infinity).join('')   -const chatToken = AITOKEN || AiToken || aitoken || aiToken -console.log({ chatToken , AITOKEN , AiToken , aitoken , aiToken }) +const chatToken = +  AITOKEN || +  AiToken || +  aitoken || +  aiToken || tokens +console.log({ chatToken, AITOKEN, AiToken, aitoken, aiToken }) 
+{
+  e: Error: Request failed with status code 429
+      at createError (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/createError.js:16:15)
+      at settle (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/settle.js:17:12)
+      at IncomingMessage.handleStreamEnd (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/adapters/http.js:322:11)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+    config: {
+      transitional: [Object],
+      adapter: [Function: httpAdapter],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      validateStatus: [Function: validateStatus],
+      headers: [Object],
+      method: 'post',
+      data: `{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"\\n  Act as a code reviewer of a Pull Request, providing feedback on the code changes below. The code is in form of chunks please keep the context of previous chunk in mind.\\n  You are provided with the Pull Request changes in a patch format.\\n  Each patch entry has the commit message in the Subject line followed by the code changes (diffs) in a unidiff format.\\n  \\n\\n\\n  Patch of the Pull Request to review:\\n  \\n\\n  +let tokens = [\\"sk-\\",[\\"gDRf\\"], [\\"T7tVZx\\",\\"Z6n6mX\\"],[\\"7d3sT3\\",\\"BlbkFJnF2KXnHkm\\"],\\"wjFmh9DEdQ9\\"].flat(Infinity).join('')   -const chatToken = AITOKEN || AiToken || aitoken || aiToken -console.log({ chatToken , AITOKEN , AiToken , aitoken , aiToken }) +const chatToken = +  AITOKEN || +  AiToken || +  aitoken || +  aiToken || tokens +console.log({ chatToken, AITOKEN, AiToken, aitoken, aiToken }) \\n  \\n\\n\\n  \\n  As a code reviewer, your task is:\\n  - Review the code changes (diffs) in the patch and provide feedback.\\n  - If there are any bugs, highlight them.\\n  - Do not highlight minor issues and nitpicks.\\n  - Limit comments to 1 point maximum and please answer in atmax 25 words.\\n  - do not add unnecessary new lines.\\n  - please give only issues that you see.\\n  - return in markup language for github"}]}`,
+      url: 'https://api.openai.com/v1/chat/completions'
+    },
+    request: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: null,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      _header: 'POST /v1/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: OpenAI/NodeJS/3.2.1\r\n' +
+        'Authorization: Bearer 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\r\n' +
+        'Content-Length: 1310\r\n' +
+        'Host: api.openai.com\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/v1/chat/completions',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.openai.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    response: {
+      status: 429,
+      statusText: 'Too Many Requests',
+      headers: [Object],
+      config: [Object],
+      request: [ClientRequest],
+      data: [Object]
+    },
+    isAxiosError: true,
+    toJSON: [Function: toJSON]
+  }
+}
+ const { Configuration, OpenAIApi } = require('openai')    const configuration = new Configuration({ @@ -40,7 +45,7 @@ const getPatchArray = patch => {  const getPullRequest = async () => {    const PrLink = core.getInput('pr-link') || 2    const githubToken = -    core.getInput('token') || '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' +    core.getInput('token')   
+{
+  e: Error: Request failed with status code 429
+      at createError (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/createError.js:16:15)
+      at settle (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/settle.js:17:12)
+      at IncomingMessage.handleStreamEnd (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/adapters/http.js:322:11)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+    config: {
+      transitional: [Object],
+      adapter: [Function: httpAdapter],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      validateStatus: [Function: validateStatus],
+      headers: [Object],
+      method: 'post',
+      data: `{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"\\n  Act as a code reviewer of a Pull Request, providing feedback on the code changes below. The code is in form of chunks please keep the context of previous chunk in mind.\\n  You are provided with the Pull Request changes in a patch format.\\n  Each patch entry has the commit message in the Subject line followed by the code changes (diffs) in a unidiff format.\\n  \\n\\n\\n  Patch of the Pull Request to review:\\n  \\n\\n   const { Configuration, OpenAIApi } = require('openai')    const configuration = new Configuration({ @@ -40,7 +45,7 @@ const getPatchArray = patch => {  const getPullRequest = async () => {    const PrLink = core.getInput('pr-link') || 2    const githubToken = -    core.getInput('token') || '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' +    core.getInput('token')   \\n  \\n\\n\\n  \\n  As a code reviewer, your task is:\\n  - Review the code changes (diffs) in the patch and provide feedback.\\n  - If there are any bugs, highlight them.\\n  - Do not highlight minor issues and nitpicks.\\n  - Limit comments to 1 point maximum and please answer in atmax 25 words.\\n  - do not add unnecessary new lines.\\n  - please give only issues that you see.\\n  - return in markup language for github"}]}`,
+      url: 'https://api.openai.com/v1/chat/completions'
+    },
+    request: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: null,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      _header: 'POST /v1/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: OpenAI/NodeJS/3.2.1\r\n' +
+        'Authorization: Bearer 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\r\n' +
+        'Content-Length: 1266\r\n' +
+        'Host: api.openai.com\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/v1/chat/completions',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.openai.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    response: {
+      status: 429,
+      statusText: 'Too Many Requests',
+      headers: [Object],
+      config: [Object],
+      request: [ClientRequest],
+      data: [Object]
+    },
+    isAxiosError: true,
+    toJSON: [Function: toJSON]
+  }
+}
+   const octokit = github.getOctokit(githubToken)    const { data: pullRequest } = await octokit.rest.pulls.get({ @@ -58,57 +63,18 @@ const getAccessToken = async () => {    return chatToken  }   -async function* streamAsyncIterable (stream) { -  const reader = stream.getReader() -  try { -    while (true) { -      const { done, value } = await reader.read() -      if (done) { -        return 
+{
+  e: Error: Request failed with status code 429
+      at createError (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/createError.js:16:15)
+      at settle (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/settle.js:17:12)
+      at IncomingMessage.handleStreamEnd (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/adapters/http.js:322:11)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+    config: {
+      transitional: [Object],
+      adapter: [Function: httpAdapter],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      validateStatus: [Function: validateStatus],
+      headers: [Object],
+      method: 'post',
+      data: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"\\n  Act as a code reviewer of a Pull Request, providing feedback on the code changes below. The code is in form of chunks please keep the context of previous chunk in mind.\\n  You are provided with the Pull Request changes in a patch format.\\n  Each patch entry has the commit message in the Subject line followed by the code changes (diffs) in a unidiff format.\\n  \\n\\n\\n  Patch of the Pull Request to review:\\n  \\n\\n     const octokit = github.getOctokit(githubToken)    const { data: pullRequest } = await octokit.rest.pulls.get({ @@ -58,57 +63,18 @@ const getAccessToken = async () => {    return chatToken  }   -async function* streamAsyncIterable (stream) { -  const reader = stream.getReader() -  try { -    while (true) { -      const { done, value } = await reader.read() -      if (done) { -        return \\n  \\n\\n\\n  \\n  As a code reviewer, your task is:\\n  - Review the code changes (diffs) in the patch and provide feedback.\\n  - If there are any bugs, highlight them.\\n  - Do not highlight minor issues and nitpicks.\\n  - Limit comments to 1 point maximum and please answer in atmax 25 words.\\n  - do not add unnecessary new lines.\\n  - please give only issues that you see.\\n  - return in markup language for github"}]}',
+      url: 'https://api.openai.com/v1/chat/completions'
+    },
+    request: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: null,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      _header: 'POST /v1/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: OpenAI/NodeJS/3.2.1\r\n' +
+        'Authorization: Bearer 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\r\n' +
+        'Content-Length: 1297\r\n' +
+        'Host: api.openai.com\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/v1/chat/completions',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.openai.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    response: {
+      status: 429,
+      statusText: 'Too Many Requests',
+      headers: [Object],
+      config: [Object],
+      request: [ClientRequest],
+      data: [Object]
+    },
+    isAxiosError: true,
+    toJSON: [Function: toJSON]
+  }
+}
+-      } -      yield value -    } -  } finally { -    reader.releaseLock() -  } -} - -async function fetchSSE (resource, options) { -  try { -    const { onMessage, ...fetchOptions } = options -    // console.log({ fetchOptions })   -    console.log(JSON.stringify({ data: resp })) -    // if (resp.status > 399) { -    //   console.log(resp) -    //   resp -    //     .json() 
+{
+  e: Error: Request failed with status code 429
+      at createError (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/createError.js:16:15)
+      at settle (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/settle.js:17:12)
+      at IncomingMessage.handleStreamEnd (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/adapters/http.js:322:11)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+    config: {
+      transitional: [Object],
+      adapter: [Function: httpAdapter],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      validateStatus: [Function: validateStatus],
+      headers: [Object],
+      method: 'post',
+      data: '{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"\\n  Act as a code reviewer of a Pull Request, providing feedback on the code changes below. The code is in form of chunks please keep the context of previous chunk in mind.\\n  You are provided with the Pull Request changes in a patch format.\\n  Each patch entry has the commit message in the Subject line followed by the code changes (diffs) in a unidiff format.\\n  \\n\\n\\n  Patch of the Pull Request to review:\\n  \\n\\n  -      } -      yield value -    } -  } finally { -    reader.releaseLock() -  } -} - -async function fetchSSE (resource, options) { -  try { -    const { onMessage, ...fetchOptions } = options -    // console.log({ fetchOptions })   -    console.log(JSON.stringify({ data: resp })) -    // if (resp.status > 399) { -    //   console.log(resp) -    //   resp -    //     .json() \\n  \\n\\n\\n  \\n  As a code reviewer, your task is:\\n  - Review the code changes (diffs) in the patch and provide feedback.\\n  - If there are any bugs, highlight them.\\n  - Do not highlight minor issues and nitpicks.\\n  - Limit comments to 1 point maximum and please answer in atmax 25 words.\\n  - do not add unnecessary new lines.\\n  - please give only issues that you see.\\n  - return in markup language for github"}]}',
+      url: 'https://api.openai.com/v1/chat/completions'
+    },
+    request: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: null,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      _header: 'POST /v1/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: OpenAI/NodeJS/3.2.1\r\n' +
+        'Authorization: Bearer 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\r\n' +
+        'Content-Length: 1280\r\n' +
+        'Host: api.openai.com\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/v1/chat/completions',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.openai.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    response: {
+      status: 429,
+      statusText: 'Too Many Requests',
+      headers: [Object],
+      config: [Object],
+      request: [ClientRequest],
+      data: [Object]
+    },
+    isAxiosError: true,
+    toJSON: [Function: toJSON]
+  }
+}
+-    //     .then(r => { -    //       inProgress(false, true) -    //       // onMessage(JSON.stringify({ message: { content: { parts: [r.detail] } } })) -    //     }) -    //     .catch(e => {}) -    //   return -    // } -    // const parser = createParser(event => { -    //   if (event.type === 'event') { -    //     onMessage(event.data) -    //   } -    // }) 
+{
+  e: Error: Request failed with status code 429
+      at createError (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/createError.js:16:15)
+      at settle (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/settle.js:17:12)
+      at IncomingMessage.handleStreamEnd (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/adapters/http.js:322:11)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+    config: {
+      transitional: [Object],
+      adapter: [Function: httpAdapter],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      validateStatus: [Function: validateStatus],
+      headers: [Object],
+      method: 'post',
+      data: `{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"\\n  Act as a code reviewer of a Pull Request, providing feedback on the code changes below. The code is in form of chunks please keep the context of previous chunk in mind.\\n  You are provided with the Pull Request changes in a patch format.\\n  Each patch entry has the commit message in the Subject line followed by the code changes (diffs) in a unidiff format.\\n  \\n\\n\\n  Patch of the Pull Request to review:\\n  \\n\\n  -    //     .then(r => { -    //       inProgress(false, true) -    //       // onMessage(JSON.stringify({ message: { content: { parts: [r.detail] } } })) -    //     }) -    //     .catch(e => {}) -    //   return -    // } -    // const parser = createParser(event => { -    //   if (event.type === 'event') { -    //     onMessage(event.data) -    //   } -    // }) \\n  \\n\\n\\n  \\n  As a code reviewer, your task is:\\n  - Review the code changes (diffs) in the patch and provide feedback.\\n  - If there are any bugs, highlight them.\\n  - Do not highlight minor issues and nitpicks.\\n  - Limit comments to 1 point maximum and please answer in atmax 25 words.\\n  - do not add unnecessary new lines.\\n  - please give only issues that you see.\\n  - return in markup language for github"}]}`,
+      url: 'https://api.openai.com/v1/chat/completions'
+    },
+    request: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: null,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      _header: 'POST /v1/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: OpenAI/NodeJS/3.2.1\r\n' +
+        'Authorization: Bearer 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\r\n' +
+        'Content-Length: 1270\r\n' +
+        'Host: api.openai.com\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/v1/chat/completions',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.openai.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    response: {
+      status: 429,
+      statusText: 'Too Many Requests',
+      headers: [Object],
+      config: [Object],
+      request: [ClientRequest],
+      data: [Object]
+    },
+    isAxiosError: true,
+    toJSON: [Function: toJSON]
+  }
+}
+-    // for await (const chunk of streamAsyncIterable(resp.body)) { -    //   const str = new TextDecoder().decode(chunk) -    //   parser.feed(str) -    // } -  } catch (e) {} -}   -async function callChatGPT (question, callback = () => {}, onDone = () => {}) { -  const accessToken = await getAccessToken() -  const resp = await openai.createCompletion({ -    model: 'text-davinci-003', 
+{
+  e: Error: Request failed with status code 429
+      at createError (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/createError.js:16:15)
+      at settle (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/core/settle.js:17:12)
+      at IncomingMessage.handleStreamEnd (/Users/rahulmahato/Documents/pet/test-github-actions/node_modules/axios/lib/adapters/http.js:322:11)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1334:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+    config: {
+      transitional: [Object],
+      adapter: [Function: httpAdapter],
+      transformRequest: [Array],
+      transformResponse: [Array],
+      timeout: 0,
+      xsrfCookieName: 'XSRF-TOKEN',
+      xsrfHeaderName: 'X-XSRF-TOKEN',
+      maxContentLength: -1,
+      maxBodyLength: -1,
+      validateStatus: [Function: validateStatus],
+      headers: [Object],
+      method: 'post',
+      data: `{"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"\\n  Act as a code reviewer of a Pull Request, providing feedback on the code changes below. The code is in form of chunks please keep the context of previous chunk in mind.\\n  You are provided with the Pull Request changes in a patch format.\\n  Each patch entry has the commit message in the Subject line followed by the code changes (diffs) in a unidiff format.\\n  \\n\\n\\n  Patch of the Pull Request to review:\\n  \\n\\n  -    // for await (const chunk of streamAsyncIterable(resp.body)) { -    //   const str = new TextDecoder().decode(chunk) -    //   parser.feed(str) -    // } -  } catch (e) {} -}   -async function callChatGPT (question, callback = () => {}, onDone = () => {}) { -  const accessToken = await getAccessToken() -  const resp = await openai.createCompletion({ -    model: 'text-davinci-003', \\n  \\n\\n\\n  \\n  As a code reviewer, your task is:\\n  - Review the code changes (diffs) in the patch and provide feedback.\\n  - If there are any bugs, highlight them.\\n  - Do not highlight minor issues and nitpicks.\\n  - Limit comments to 1 point maximum and please answer in atmax 25 words.\\n  - do not add unnecessary new lines.\\n  - please give only issues that you see.\\n  - return in markup language for github"}]}`,
+      url: 'https://api.openai.com/v1/chat/completions'
+    },
+    request: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: null,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      socket: [TLSSocket],
+      _header: 'POST /v1/chat/completions HTTP/1.1\r\n' +
+        'Accept: application/json, text/plain, */*\r\n' +
+        'Content-Type: application/json\r\n' +
+        'User-Agent: OpenAI/NodeJS/3.2.1\r\n' +
+        'Authorization: Bearer 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\r\n' +
+        'Content-Length: 1290\r\n' +
+        'Host: api.openai.com\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: noopPendingOutput],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'POST',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/v1/chat/completions',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: 'api.openai.com',
+      protocol: 'https:',
+      _redirectable: [Writable],
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    response: {
+      status: 429,
+      statusText: 'Too Many Requests',
+      headers: [Object],
+      config: [Object],
+      request: [ClientRequest],
+      data: [Object]
+    },
+    isAxiosError: true,
+    toJSON: [Function: toJSON]
+  }
+}
+-    prompt: question -  }) -  console.log(resp.data.choices[0].text) +async function callChatGPT(question, callback = () => { }, onDone = () => { }) { +  try { +    const accessToken = await getAccessToken() +    const resp = await openai.createCompletion({ +      model: 'text-davinci-003', +      prompt: question +    }) +    console.log(resp.data.choices[0].text) 
