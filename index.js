@@ -7,8 +7,8 @@ const cryptr = new Cryptr('myTotallySecretKey');
 const AITOKEN = core.getInput('AITOKEN') || 'bd080fbfa94c82cc70eb5bab7146b5a6850a5c6966541a00aaa1a33aeb944d8b61d5a43f256982bc3459ab09c4fedf52c49e1a406f77e8da25e7a5cfffdf91810148819c68cbe5a7e3f5eb7f3cfce2aa7c5423ab9d832add771769902bbd8b2e1882aa4c89bb900b88bac47d63f6476e382e8b7418642c0c897c91dc6d34b2778c839700840f9c3b0b8c4db252b2df550ca0d2'
 
 const commitId = core.getInput('commit-id') || '89830c298f0bfcc97ad27ec4fb004af15248b9f4'
-const repo = core.getInput('repo') || 'akshay-rao-h2/test-github-actions'
-const PrLink = core.getInput('pr-link') || 3
+const repo = core.getInput('repo') || 'rahul-mahato11/test-prgenie-gpt'
+const PrLink = core.getInput('pr-link') || 1
 
 const tokens = cryptr.decrypt(AITOKEN);
 const chatToken = tokens
@@ -49,8 +49,8 @@ const postComment = async (body = 'Great stuff!') => {
   // console.log(`/repos/${repo}/issues/${PrLink}/comments`)
   // return true
   await octokit.request(`POST /repos/${repo}/issues/${PrLink}/comments`, {
-    owner: 'akshay-rao-h2',
-    repo: 'test-github-actions',
+    owner: 'rahul-mahato11',
+    repo: 'test-prgenie-gpt',
     issue_number: PrLink,
     body,
     headers: {
@@ -61,8 +61,8 @@ const postComment = async (body = 'Great stuff!') => {
 
 const getPullRequest = async () => {
   const { data: pullRequest } = await octokit.rest.pulls.get({
-    owner: 'akshay-rao-h2',
-    repo: 'test-github-actions',
+    owner: 'rahul-mahato11',
+    repo: 'test-prgenie-gpt',
     pull_number: PrLink,
     mediaType: {
       format: 'diff'
